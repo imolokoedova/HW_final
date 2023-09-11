@@ -15,7 +15,34 @@
 // положить символы в новый массив
 
 string[] arr = {"Hello", "2", "world", ":-)"};
-PrintArray(arr);
+string[] newArr = FilterArray(arr);
+PrintArray(newArr);
+
+string[] FilterArray(string[] arr) 
+{
+    // находим кол-во элементов в новом массиве
+    int newLength = 0;
+    for (int i=0; i<arr.Length; i++)
+    {
+        if (arr[i].Length <= 3) 
+        {
+            newLength++;
+        }
+    }
+    // создаем новый массив
+    string[] newArr = new string[newLength];
+    // копируем в новый массив элементы
+    int j = 0;
+    for (int i=0; i<arr.Length; i++)
+    {
+        if (arr[i].Length <= 3) 
+        {
+            newArr[j] = arr[i];
+            j++;
+        }
+    }
+    return newArr;
+}
 
 void PrintArray(string[] arr)
 {
