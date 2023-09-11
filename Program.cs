@@ -14,3 +14,17 @@
 // создать новый массив нужного размера
 // положить символы в новый массив
 
+string[] arr = {"Hello", "2", "world", ":-)"};
+PrintArray(arr);
+
+void PrintArray(string[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+    {
+        string elem = arr[i];
+        if (i < arr.Length - 1)
+            Console.Write($"{elem}, ");
+        else
+            Console.WriteLine($"{elem}");
+    }
+}
